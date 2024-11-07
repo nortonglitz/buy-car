@@ -3,7 +3,7 @@
 import { useClickOutside } from "@/hooks"
 import { useRef } from "react"
 import Link from "next/link"
-import { IconStar, IconSettings, IconLogin, IconId } from "@tabler/icons-react"
+import { IconMessage, IconSettings, IconLogin, IconId } from "@tabler/icons-react"
 
 type UserMenuProps = {
     open?: boolean,
@@ -16,7 +16,7 @@ export const UserMenu = ({
 }: UserMenuProps) => {
 
     const userMenuRef = useRef(null)
-    const isLogged = false
+    const isLogged = true
 
     useClickOutside(() => {
         onClickOutside()
@@ -56,8 +56,8 @@ export const UserMenu = ({
                 {isLogged ?
                     <>
                         <button>
-                            <IconStar />
-                            Favoritos
+                            <IconMessage />
+                            Mensagens
                         </button>
                         <button>
                             <IconSettings />
