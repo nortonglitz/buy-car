@@ -70,14 +70,14 @@ export const UserMenu = ({
                     </>
                     :
                     <>
-                        <Link href="login">
+                        <Link href="/auth/login">
                             <button>
                                 <IconLogin />
                                 Entrar
                             </button>
                         </Link>
                         <hr />
-                        <Link href="register">
+                        <Link href="/auth/register">
                             <button className="text-teal-400">
                                 <IconId />
                                 Cadastrar
