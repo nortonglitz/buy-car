@@ -16,7 +16,7 @@ export const UserMenu = ({
 }: UserMenuProps) => {
 
     const userMenuRef = useRef(null)
-    const isLogged = true
+    const isLogged = false
 
     useClickOutside(() => {
         onClickOutside()

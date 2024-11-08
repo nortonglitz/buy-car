@@ -32,8 +32,6 @@ const SlideNavigation = () => {
         }
     }, [swiper])
 
-    console.log(isBeginning)
-
     return (
         <div
             className={`
@@ -49,11 +47,11 @@ const SlideNavigation = () => {
                 [&_button]:invisible
                 [&_button]:px-2
                 [&:hover_button]:visible
-                [&_button]:opacity-40
-                [&_button:hover]:opacity-100
+                [&_button]:opacity-30
+                [&_button:active]:opacity-55
 
-                [&_svg]:bg-neutral-200/40
-                [&_svg]:text-black/60
+                [&_svg]:bg-neutral-200
+                [&_svg]:text-black
                 [&_svg]:rounded-full
 
                 ${isBeginning ? "[&_button:nth-child(1)]:invisible" : ""}
@@ -74,6 +72,7 @@ export const Card = () => {
                 bg-white
                 rounded-3xl
                 border
+                border-neutral-200
                 overflow-hidden
                 shadow-sm
                 h-[25rem]
@@ -94,7 +93,7 @@ export const Card = () => {
                     })}
                 </Swiper>
             </div>
-            <div className="flex flex-col px-4 pt-2 pb-1 [&_p]:leading-none flex-1 [&:hover]:cursor-pointer">
+            <div className="flex flex-col px-4 pt-2 pb-1 [&_p]:leading-none flex-1 [&:hover]:cursor-pointer [&:active]:bg-neutral-100 transition">
                 <div className="flex justify-between max-h-16 text-ellipsis overflow-hidden">
                     <div>
                         <p className="text-xs uppercase">Maserati</p>
