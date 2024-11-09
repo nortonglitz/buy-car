@@ -6,7 +6,8 @@ export const Filter = () => {
     return (
         <aside
             className="
-                w-80
+                w-72
+                xl:w-80
                 bg-white
                 pt-4
                 px-4
@@ -192,7 +193,8 @@ export const Filter = () => {
                     bottom-0
                     bg-white
                     z-10
-                    w-80
+                    w-72
+                    xl:w-80
                     left-0
                     h-20
                     px-6

@@ -1,141 +1,116 @@
 "use client"
 
-import { IconSend2, IconX } from "@tabler/icons-react"
+import { IconMessage, IconMinus } from "@tabler/icons-react"
 import { useState } from "react"
+import { sampleCarImgs } from "@/data/sample-car-imgs"
+import Image from "next/image"
 
-const Circle = () => {
-    return (
-        <div
-            className={`
-                border
-                bg-green-400
-                w-3
-                h-3
-                rounded-full
-                mr-2
-            `}
-        />
-    )
+type MessagePreviewProps = {
+    sender: string
+    lastMsg: string
+    msgDate: string // Mudar para Date quando tiver os dados
 }
 
-type MessageProps = {
-    text?: string
-    time?: string
-    self?: boolean
-}
-
-const Message = ({
-    text,
-    time,
-    self
-}: MessageProps) => {
+const MessagePreview = ({
+    sender,
+    lastMsg,
+    msgDate
+}: MessagePreviewProps) => {
     return (
-        <div
-            className={`
-                relative
-                text-neutral-800
-                w-fit
-                pl-2
-                pr-9
-                pb-1
-                rounded-md
-                break-words
-                max-w-64
-
-                ${self ? "bg-sky-100" : "bg-gray-100"}
-                ${self ? "self-end" : "self-start"}
-            `}
-        >
-            {text}
-            <span
-                className="
-                absolute
-                right-[0.3rem]
-                bottom-0
-                text-[0.6rem]
-                text-neutral-500
+        <button
+            className="
+                py-2
+                px-2
+                bg-white
+                flex
+                items-center
+                gap-2
+                border-b
+                [&:hover]:bg-neutral-100
             "
+        >
+            <Image
+                src={sampleCarImgs[0]}
+                alt="avatar-imgs-1"
+                width={400}
+                height={400}
+                className="w-10 h-10 rounded-full border border-neutral-500 object-cover"
+            />
+            <div
+                className="
+                    flex
+                    flex-col
+                    text-left
+                    text-sm
+                    overflow-hidden
+                    gap-1
+                    w-full
+
+                    [&_p]:truncate
+                    [&_p]:leading-none
+                "
             >
-                {time}
-            </span>
-        </div>
+                <div className="flex items-baseline justify-between">
+                    <p className="font-medium">{sender}</p>
+                    <p className="text-[0.6rem] text-neutral-400">{msgDate}</p>
+                </div>
+                <p className="text-neutral-500">{lastMsg}</p>
+            </div>
+        </button>
     )
 }
 
 export const Messenger = () => {
 
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(true)
 
     return (
-        <>
-            <div
-                className={`
-                    fixed
-                    bottom-0
-                    right-5
-                    w-80
-                    ${open ? "h-80" : "h-10"}
-                    z-20
-                    bg-neutral-50
-                    rounded-t-lg
-                    border
-                    border-neutral-400
-                    flex
-                    flex-col
-                `}
+        <div
+            className={`
+                w-80
+                ${open ? "h-fit" : "h-10"}
+                h-10
+                z-20
+                bg-neutral-50
+                rounded-t-lg
+                border
+                border-neutral-400
+                flex
+                flex-col
+            `}
+        >
+            <button
+                className="
+                    text-center
+                    font-medium
+                    px-2
+                    py-1
+                    w-full
+                    h-10
+                "
+                onClick={() => setOpen(!open)}
             >
-                <button
-                    className="
-                        flex
-                        items-center
-                        justify-between
-                        font-medium
-                        px-2
-                        py-1
-                        w-full
-                        h-10
-                    "
-                    onClick={() => setOpen(!open)}
-                >
-                    <div className="flex items-center">
-                        <Circle />
-                        Norton Glitz
+                <div className="flex justify-between gap-1">
+                    <div className="flex gap-1">
+                        <IconMessage />
+                        Mensagens
                     </div>
-                    <IconX
-                        className="
-                            transition
-                            text-neutral-500
-                            [&:hover]:text-black
-                        "
-                    />
-                </button>
-                <hr className="border-neutral-200 shadow" />
-                <div className="h-56 px-2 pt-3 gap-2 flex flex-col overflow-auto">
-                    <Message text="Bom dia, tudo bem?" self time="08:37" />
-                    <Message text="Bom dia, tudo e você?" time="08:37" />
-                    <Message text="Também, qual é o valor do carro à vista?" self time="08:38" />
-                    <Message text="Venha aqui conhecer a nossa loja, e fazer um test-drive. O valor é de R$ 87.000." time="08:39" />
+                    {open && <IconMinus className="text-neutral-500 [&:hover]:text-black" />}
                 </div>
-                <div className="flex items-center mx-2 gap-1 h-14">
-                    <input
-                        type="text"
-                        placeholder="Mensagem"
-                        className="
-                            rounded-full
-                            shadow
-                            bg-sky-50
-                            py-1
-                            px-3
-                            border
-                            border-neutral-400
-                            flex-1
-                        "
-                    />
-                    <button className="bg-sky-400 text-white rounded-full p-1 [&:active]:scale-98">
-                        <IconSend2 />
-                    </button>
-                </div>
-            </div>
-        </>
+            </button>
+            <hr className="border-neutral-200 shadow" />
+            {open &&
+                <>
+                    <MessagePreview sender="Rb - Motors" lastMsg="Devolve meu dinheiro seu safado!" msgDate="7 nov" />
+                    <MessagePreview sender="Iguatemi Automoveis" lastMsg="Devolve meu dinheiro seu safado!" msgDate="7 nov" />
+                    <MessagePreview sender="Next Motors" lastMsg="Devolve meu dinheiro seu safado!" msgDate="7 nov" />
+                    <MessagePreview sender="Audi Cnter Lapa Sorana" lastMsg="Devolve meu dinheiro seu safado!" msgDate="8 nov" />
+                    <MessagePreview sender="Front Motors" lastMsg="Bom dia" msgDate="Ontem" />
+                    <MessagePreview sender="Stuttgart" lastMsg="O Porsche ainda está te esperando." msgDate="Ontem" />
+                    <MessagePreview sender="Lt4 Motors" lastMsg="Devolve meu dinheiro seu safado!" msgDate="Hoje" />
+                    <MessagePreview sender="Prime Veículos Premium" lastMsg="Aceitamos a sua proposta!" msgDate="Hoje" />
+                </>
+            }
+        </div>
     )
 }
