@@ -4,12 +4,14 @@ import { DetailedHTMLProps, InputHTMLAttributes } from "react"
 type InputTextProps = {
     icon?: React.ElementType<IconProps>
     iconPos?: "left" | "right"
+    inputClassName?: string
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
 export const InputText = ({
     icon: Icon,
     iconPos = "left",
     className,
+    inputClassName,
     ...props
 }: InputTextProps) => {
     return (
@@ -25,6 +27,7 @@ export const InputText = ({
                     ${Icon ? iconPos === "left" ? "pl-9 pr-3" : "pl-3 pr-9" : "pr-3 pl-3"}
                     py-1
                     w-full
+                    ${inputClassName}
                 `}
                 {...props}
             />

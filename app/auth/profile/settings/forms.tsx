@@ -1,5 +1,5 @@
 import { InputText } from "@/components"
-import { IconUser, IconAt, IconLockPassword, IconCheck } from "@tabler/icons-react"
+import { IconUser, IconAt } from "@tabler/icons-react"
 
 type FormsProps = {
     type: "name" | "password" | "email"
@@ -20,7 +20,7 @@ export const Forms = ({
                     type="submit"
                     className="
                     mt-5
-                    bg-teal-400
+                    bg-sky-500
                     text-white
                     px-3
                     rounded-full
@@ -55,7 +55,7 @@ export const Forms = ({
                     type="submit"
                     className="
                     mt-5
-                    bg-teal-400
+                    bg-sky-500
                     text-white
                     px-3
                     rounded-full
@@ -90,7 +90,7 @@ export const Forms = ({
                     type="submit"
                     className="
                     mt-5
-                    bg-teal-400
+                    bg-sky-500
                     text-white
                     px-3
                     rounded-full

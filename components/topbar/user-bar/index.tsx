@@ -7,8 +7,8 @@ import { MouseEventHandler, useState } from "react"
 
 export const UserBar = () => {
 
-    const isLogged = false
-    const hasAvatar = false
+    const isLogged = true
+    const hasAvatar = true
     const [userMenuOpen, setMenuUserMenu] = useState(false)
 
     const handleUserBarClick: MouseEventHandler<HTMLButtonElement> = () => {

@@ -1,5 +1,6 @@
 import { InputText } from "@/components"
 import { IconAt, IconLockPassword, IconUser } from "@tabler/icons-react"
+import Link from "next/link"
 import { FormEventHandler } from "react"
 
 type RegisterFormProps = {
@@ -37,6 +38,26 @@ export const RegisterForm = ({
                     Registrar
                 </button>
             </form>
+            <hr className="my-4" />
+            <div className="flex items-center justify-center">
+                <p>Já possui cadastro?</p>
+                <Link href="/auth/login">
+                    <button
+                        className="
+                            text-white
+                            bg-sky-500
+                            rounded-fullp
+                            px-3
+                            py-1
+                            rounded-full
+                            ml-2
+                            [&:active]:scale-98
+                        "
+                    >
+                        Entrar
+                    </button>
+                </Link>
+            </div>
         </>
     )
 }

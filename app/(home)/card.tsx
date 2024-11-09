@@ -1,11 +1,12 @@
 "use client"
 
 import Image from "next/image"
-import { sampleCarImgs } from "./sample-car-imgs"
+import { sampleCarImgs } from "@/data/sample-car-imgs"
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react"
 import "swiper/css"
 import { IconChevronRight, IconChevronLeft } from "@tabler/icons-react"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 const SlideNavigation = () => {
 
@@ -64,7 +65,13 @@ const SlideNavigation = () => {
     )
 }
 
-export const Card = () => {
+type CardProps = {
+    href?: string
+}
+
+export const Card = ({
+    href = ""
+}: CardProps) => {
 
     return (
         <div
@@ -93,31 +100,33 @@ export const Card = () => {
                     })}
                 </Swiper>
             </div>
-            <div className="flex flex-col px-4 pt-2 pb-1 [&_p]:leading-none flex-1 [&:hover]:cursor-pointer [&:active]:bg-neutral-100 transition">
-                <div className="flex justify-between max-h-16 text-ellipsis overflow-hidden">
+            <Link href={href} className="flex flex-1" target="_blank" rel="noopener noreferrer">
+                <div className="flex flex-col px-4 pt-2 pb-1 [&_p]:leading-none flex-1 [&:hover]:cursor-pointer [&:active]:bg-neutral-100 transition">
+                    <div className="flex justify-between max-h-16 text-ellipsis overflow-hidden">
+                        <div>
+                            <p className="text-xs uppercase">Maserati</p>
+                            <p>Granturismo</p>
+                        </div>
+                        <div className="text-right text-neutral-400">
+                            <p className="text-sm">2018/2018</p>
+                            <p className="text-xs">2.679 km</p>
+                        </div>
+                    </div>
+                    <p className="font-medium flex-1 flex items-end justify-end">R$ 1.400.000</p>
                     <div>
-                        <p className="text-xs uppercase">Maserati</p>
-                        <p>Granturismo</p>
-                    </div>
-                    <div className="text-right text-neutral-400">
-                        <p className="text-sm">2018/2018</p>
-                        <p className="text-xs">60.000 km</p>
-                    </div>
-                </div>
-                <p className="font-medium flex-1 flex items-end justify-end">R$ 1.400.000</p>
-                <div>
-                    <hr className="my-2 border-neutral-200" />
-                    <div className="flex justify-between my-2 text-xs text-right">
-                        <p>Prime Veículos Premium</p>
-                        <p>(15) 3042-0859</p>
-                    </div>
-                    <hr className="border-neutral-200 my-2" />
-                    <div className="text-xs text-center">
-                        <p>Sorocaba - SP</p>
-                        <p className="text-gray-400 font-extralight">Anunciado há 6 dias</p>
+                        <hr className="my-2 border-neutral-200" />
+                        <div className="flex justify-between my-2 text-xs text-right">
+                            <p>Prime Veículos Premium</p>
+                            <p>(15) 3042-0859</p>
+                        </div>
+                        <hr className="border-neutral-200 my-2" />
+                        <div className="text-xs text-center">
+                            <p>Sorocaba - SP</p>
+                            <p className="text-gray-400 font-extralight mt-0.5">Anunciado há 6 dias</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </div>
     )
 }
