@@ -24,10 +24,8 @@ export const Topbar = () => {
         "
         >
             <Logo />
-            <div className="flex gap-4 items-center">
-                <InputText icon={IconSearch} iconPos="right" placeholder="Pesquisar" />
-                <UserBar />
-            </div>
+            <InputText className="w-96" inputClassName="border-neutral-400" icon={IconSearch} iconPos="right" placeholder="Pesquisar" />
+            <UserBar />
         </nav>
     )
 }

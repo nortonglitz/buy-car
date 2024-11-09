@@ -20,7 +20,7 @@ export const UserBar = () => {
     }
 
     return (
-        <>
+        <div className="flex items-center gap-4">
             {isLogged &&
                 <button
                     className="
@@ -101,6 +101,6 @@ export const UserBar = () => {
                 </button>
                 <UserMenu open={userMenuOpen} onClickOutside={handleUserMenuClickOutside} />
             </div>
-        </>
+        </div>
     )
 }

@@ -34,7 +34,7 @@ export default function Home() {
           )
         })}
         <div className="fixed bottom-0 left-0 right-0 flex justify-end mx-2 gap-2 items-end z-20 h-0">
-          <MessageBox sender="Rb - Motors" />
+          <MessageBox sender="Rb - Motors" online />
           <MessageBox sender="Next Motors" />
           <Messenger />
         </div>

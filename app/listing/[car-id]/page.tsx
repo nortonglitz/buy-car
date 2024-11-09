@@ -14,7 +14,7 @@ export default function ListingInfo() {
     return (
         <main className="flex-col flex items-center">
             {swiperOpen && <CarImgsSwiper onClose={() => setSwiperOpen(false)} />}
-            <div className="max-w-screen-lg relative w-full">
+            <div className="w-4/5 relative">
                 <div
                     className="
                         absolute
