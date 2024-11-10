@@ -24,7 +24,7 @@ export const Topbar = () => {
         "
         >
             <Logo />
-            <InputText className="w-96" inputClassName="border-neutral-400" icon={IconSearch} iconPos="right" placeholder="Pesquisar" />
+            <InputText className="w-96 hidden lg:flex" inputClassName="border-neutral-400" icon={IconSearch} iconPos="right" placeholder="Pesquisar" />
             <UserBar />
         </nav>
     )

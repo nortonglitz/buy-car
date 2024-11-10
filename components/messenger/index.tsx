@@ -101,14 +101,14 @@ export const Messenger = () => {
             <hr className="border-neutral-200 shadow" />
             {open &&
                 <>
-                    <MessagePreview sender="Rb - Motors" lastMsg="Devolve meu dinheiro seu safado!" msgDate="7 nov" />
-                    <MessagePreview sender="Iguatemi Automoveis" lastMsg="Devolve meu dinheiro seu safado!" msgDate="7 nov" />
-                    <MessagePreview sender="Next Motors" lastMsg="Devolve meu dinheiro seu safado!" msgDate="7 nov" />
-                    <MessagePreview sender="Audi Cnter Lapa Sorana" lastMsg="Devolve meu dinheiro seu safado!" msgDate="8 nov" />
-                    <MessagePreview sender="Front Motors" lastMsg="Bom dia" msgDate="Ontem" />
-                    <MessagePreview sender="Stuttgart" lastMsg="O Porsche ainda está te esperando." msgDate="Ontem" />
-                    <MessagePreview sender="Lt4 Motors" lastMsg="Devolve meu dinheiro seu safado!" msgDate="Hoje" />
                     <MessagePreview sender="Prime Veículos Premium" lastMsg="Aceitamos a sua proposta!" msgDate="Hoje" />
+                    <MessagePreview sender="Lt4 Motors" lastMsg="Devolve meu dinheiro seu safado!" msgDate="Hoje" />
+                    <MessagePreview sender="Stuttgart" lastMsg="O Porsche ainda está te esperando." msgDate="Ontem" />
+                    <MessagePreview sender="Front Motors" lastMsg="Bom dia" msgDate="Ontem" />
+                    <MessagePreview sender="Audi Cnter Lapa Sorana" lastMsg="Devolve meu dinheiro seu safado!" msgDate="8 nov" />
+                    <MessagePreview sender="Next Motors" lastMsg="Devolve meu dinheiro seu safado!" msgDate="7 nov" />
+                    <MessagePreview sender="Iguatemi Automoveis" lastMsg="Devolve meu dinheiro seu safado!" msgDate="7 nov" />
+                    <MessagePreview sender="Rb - Motors" lastMsg="Devolve meu dinheiro seu safado!" msgDate="7 nov" />
                 </>
             }
         </div>
