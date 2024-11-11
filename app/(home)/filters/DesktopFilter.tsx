@@ -2,10 +2,13 @@ import { InputText } from "@/components"
 import { IconRestore } from "@tabler/icons-react"
 import Image from "next/image"
 
-export const Filter = () => {
+export const DesktopFilter = () => {
+
     return (
         <aside
             className="
+                hidden
+                lg:block
                 w-72
                 xl:w-80
                 bg-white
@@ -18,10 +21,17 @@ export const Filter = () => {
                 bottom-0
                 overflow-y-auto
                 z-0
+
+                [&_h6]:font-medium
+                [&_h6]:text-sm
+                [&_h6]:mb-2 
+                [&_h6]:text-center
+
+                [&_hr]:my-6
             "
         >
             <div>
-                <h6 className="font-medium text-sm mb-2 text-center">Marca</h6>
+                <h6>Marca</h6>
                 <div
                     className="
                         grid
@@ -36,7 +46,6 @@ export const Filter = () => {
                         [&_button]:items-center
                         [&_button]:border
                         [&_button]:rounded-lg
-                        [&_button]:cursor-pointer
                         [&_button:active]:scale-98
 
                         [&_button_img]:w-14
@@ -116,9 +125,9 @@ export const Filter = () => {
                     </button>
                 </div>
             </div>
-            <hr className="my-6" />
+            <hr />
             <div>
-                <h6 className="font-medium text-sm mb-2 text-center">Localização</h6>
+                <h6>Localização</h6>
                 <div className="flex flex-col">
                     <InputText className="w-full" placeholder="Localização" />
                     <div
@@ -161,25 +170,25 @@ export const Filter = () => {
                     </div>
                 </div>
             </div>
-            <hr className="my-6" />
+            <hr />
             <div>
-                <h6 className="font-medium text-sm mb-2 text-center">Preço</h6>
+                <h6>Preço</h6>
                 <div className="flex gap-4">
                     <InputText placeholder="De" />
                     <InputText placeholder="Até" />
                 </div>
             </div>
-            <hr className="my-6" />
+            <hr />
             <div>
-                <h6 className="font-medium text-sm mb-2 text-center">Ano</h6>
+                <h6>Ano</h6>
                 <div className="flex gap-4">
                     <InputText placeholder="De" />
                     <InputText placeholder="Até" />
                 </div>
             </div>
-            <hr className="my-6" />
+            <hr />
             <div>
-                <h6 className="font-medium text-sm mb-2 text-center">Quilometragem</h6>
+                <h6>Quilometragem</h6>
                 <div className="flex gap-4">
                     <InputText placeholder="De" />
                     <InputText placeholder="Até" />
