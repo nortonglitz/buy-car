@@ -1,9 +1,10 @@
 "use client"
 
-import { useClickOutside } from "@/hooks"
+import { useClickOutside, useMediaQuery } from "@/hooks"
 import { useRef } from "react"
 import Link from "next/link"
-import { IconMessage, IconSettings, IconLogin, IconId } from "@tabler/icons-react"
+import { IconMessage, IconSettings, IconLogin, IconId, IconSearch } from "@tabler/icons-react"
+import { InputText } from "@/components/inputs/text"
 
 type UserMenuProps = {
     open?: boolean,
@@ -17,6 +18,8 @@ export const UserMenu = ({
 
     const userMenuRef = useRef(null)
     const isLogged = true
+
+    const isMobile = useMediaQuery("", "lg")
 
     useClickOutside(() => {
         onClickOutside()
@@ -53,6 +56,12 @@ export const UserMenu = ({
                     [&_svg]:w-[1rem]
                 "
             >
+                {isMobile &&
+                    <>
+                        <InputText placeholder="Pesquisar" className="min-w-60 mt-2" inputClassName="border-neutral-400" icon={IconSearch} iconPos="right" />
+                        <hr className="my-2" />
+                    </>
+                }
                 {isLogged ?
                     <>
                         <button>
